@@ -1,0 +1,45 @@
+﻿<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:gl="clr-namespace:OpenTK.Wpf;assembly=GLWpfControl"
+        Title="PIV Analyzer" WindowState="Maximized">
+
+    <Grid Background="White">
+        <!-- Bố cục 2 hàng -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Thanh điều khiển -->
+            <RowDefinition Height="*"/>
+            <!-- Màn hình GL -->
+        </Grid.RowDefinitions>
+
+        <!-- Thanh điều khiển -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal"
+                    HorizontalAlignment="Center" Margin="10">
+            <TextBlock Text="PIV Analyzer  流れ場の計算" FontSize="18" FontWeight="Bold"
+                       VerticalAlignment="Center" Margin="10"/>
+            <Button x:Name="ProjectButton" Content="myProject1" Height="30" Width="120"
+                    Margin="10" Click="ProjectButton_Click"/>
+            <Button x:Name="SaveButton" Content="保存" Height="30" Width="100"
+                    Margin="10" Click="SaveButton_Click"/>
+            <Button x:Name="CalcButton" Content="計算結果表示" Height="30" Width="150"
+                    Margin="10" Click="CalcButton_Click"/>
+            <Button x:Name="ResultButton" Content="流れ場の計算" Height="30" Width="150"
+                    Margin="10" Click="FlowFieldButton_Click"/>
+            <Button x:Name="OpenObjButton" Content="3Dモデルを開く" Height="30" Width="150"
+                    Margin="10" Click="OpenObjButton_Click"/>
+            <ComboBox x:Name="LanguageComboBox" Width="100" Height="30" Margin="10">
+                <ComboBoxItem IsSelected="True">日本語</ComboBoxItem>
+                <ComboBoxItem>English</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+
+        <!-- Màn hình OpenTK GL -->
+        <gl:GLWpfControl x:Name="glControl" Grid.Row="1"
+                         Ready="GlControl_Ready"
+                         Render="GlControl_Render"
+                         HorizontalAlignment="Stretch"
+                         VerticalAlignment="Stretch"
+                         Width="Auto" Height="Auto"/>
+    </Grid>
+</Window>
