@@ -5,15 +5,11 @@
         Title="PIV Analyzer" WindowState="Maximized">
 
     <Grid Background="White">
-        <!-- Bố cục 2 hàng -->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <!-- Thanh điều khiển -->
             <RowDefinition Height="*"/>
-            <!-- Màn hình GL -->
         </Grid.RowDefinitions>
 
-        <!-- Thanh điều khiển -->
         <StackPanel Grid.Row="0" Orientation="Horizontal"
                     HorizontalAlignment="Center" Margin="10">
             <TextBlock Text="PIV Analyzer  流れ場の計算" FontSize="18" FontWeight="Bold"
@@ -34,12 +30,10 @@
             </ComboBox>
         </StackPanel>
 
-        <!-- Màn hình OpenTK GL -->
         <gl:GLWpfControl x:Name="glControl" Grid.Row="1"
                          Ready="GlControl_Ready"
                          Render="GlControl_Render"
-                         HorizontalAlignment="Stretch"
-                         VerticalAlignment="Stretch"
-                         Width="Auto" Height="Auto"/>
+                         Height="900"
+                         Panel.ZIndex="100" Margin="33,60,10,86"/>
     </Grid>
 </Window>
