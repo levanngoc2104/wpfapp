@@ -1,8 +1,0 @@
-<Window x:Class="WpfApp.ResultWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="計算結果表示" Height="400" Width="600">
-    <Grid>
-        <TextBlock Text="計算結果表示ウィンドウ" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-    </Grid>
-</Window>
